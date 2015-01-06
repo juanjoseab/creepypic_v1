@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'piedra';
+    src: url('../fonts/Piedra-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Piedra-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Piedra-Regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Piedra-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Piedra-Regular.svg#Piedra-Regular') format('svg'); /* Legacy iOS */
+}
+@font-face {
+    font-family: 'amarante';
+    src: url('../fonts/Amarante-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Amarante-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Amarante-Regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Amarante-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Amarante-Regular.svg#Amarante-Regular') format('svg'); /* Legacy iOS */
+}
+@font-face {
+    font-family: 'unicaone';
+    src: url('../fonts/UnicaOne-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/UnicaOne-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/UnicaOne-Regular.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/UnicaOne-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/UnicaOne-Regular.svg#UnicaOne-Regular') format('svg'); /* Legacy iOS */
+}
+
+body {
+    height: 100%;
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-image: url(../img/fondo.jpg);
+    background-size: auto 100%;  
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+.container#general-wrapper {
+    
+}
+
+.piedra {
+    font-family: 'piedra', sans-serif;
+    color: #fff;
+}
+
+.unicaone {
+    font-family: 'unicaone', sans-serif;
+    color: #fff;
+}
+
+.hometitle {
+    padding-top: 10%;
+    font-size: 72px;
+    text-align: center;
+    margin-bottom: 30%;
+}
+.btn-front {
+    font-size: 200%;
+}
+.btn-front img {
+    width: 100%;
+    height: auto;
+    max-width: 100px;
+}
+
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .hometitle {
+        padding-top: 5%;
+        margin-bottom: 8%;
+    }  
+    .btn-front img {
+        width: 60%;
+    }
+}
+
