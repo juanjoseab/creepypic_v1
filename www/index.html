@@ -29,14 +29,18 @@
         <title>CreepyPicture App</title>
     </head>
     <body>
-        <div class="container" id="general-wrapper" ng-controller="MainCtrl">
-            <ng-view>Loading...</ng-view>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>        
+        <div class="container" id="general-wrapper">
+            <div ui-view></div> 
+        </div>       
         <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="js/fastClick.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>        
+        <script type="text/javascript" src="bower_components/angular-phonegap-ready/ready.js"></script>        
         <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="bower_components/angular-touch/angular-touch.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script type="text/javascript" src="bower_components/angular-phonegap/angular-phonegap.min.js"></script>
+        <script type="text/javascript" src="js/services.js"></script>        
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

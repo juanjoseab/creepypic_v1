@@ -78,6 +78,9 @@
         },
         "org.apache.cordova.file-transfer": {
             "PACKAGE_NAME": "com.wilaen.creepypic"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.wilaen.creepypic"
         }
     },
     "dependent_plugins": {

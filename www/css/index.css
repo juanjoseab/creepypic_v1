@@ -57,13 +57,34 @@ body {
     text-align: center;
     margin-bottom: 30%;
 }
-.btn-front {
-    font-size: 200%;
+
+.createtitle {
+    padding-top: 10%;
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 10%;
 }
+
+.btn-front {
+    font-size: 250%;
+}
+
 .btn-front img {
     width: 100%;
     height: auto;
     max-width: 100px;
+}
+
+.crear-btn-container div img {
+    width: 100%;
+    max-width:400px;
+    height: auto;
+}
+
+.back-btn {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
 }
 
 
@@ -75,5 +96,33 @@ body {
     .btn-front img {
         width: 60%;
     }
+
 }
 
+@media (max-height: 400px)  {
+    .createtitle {
+        padding-top: 5%;
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+    .crear-btn-container div img {
+        width: 60% !important;
+        max-width:300px !important;;
+        height: auto; 
+    }
+}
+
+@media (max-height: 321px)  {
+    .createtitle {
+        padding-top: 3%;
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 3%;
+    }
+    .crear-btn-container div img {
+        width: 60% !important;
+        max-width:300px !important;;
+        height: auto; 
+    }
+}

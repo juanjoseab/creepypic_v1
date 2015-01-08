@@ -1,49 +1,75 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+var app = angular.module('creepypic',["ui.router"]);
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+app.config(function($stateProvider, $urlRouterProvider) {
 
-        console.log('Received Event: ' + id);
-    }
-};
+        /*
+        $routeProvider.
+        when('/home', {
+            templateUrl: 'pages/home.html',
+            controller: 'MainCtrl'
+        })
+        .when('/crear', {
+            templateUrl: 'pages/crear.html',
+            controller: 'MainCtrl'
+        })
+        .otherwise({
+            redirectTo: '/home'
+        });*/
+
+        
+        $stateProvider
+            .state('app', {
+                url: "/home",
+                templateUrl: "pages/home.html",
+                controller:"MainCtrl"
+            })
+            .state('app.create', {
+                url: "/create",
+                templateUrl: "pages/create.html",
+                controller:"MainCtrl"
+            });
+        $urlRouterProvider.otherwise("/home");
+
+  });
+
+app.controller("MainCtrl",['$scope', '$interval',
+    function($scope,$interval,Camera){
+        $scope.resizeBody = function() {          
+            //jQuery('#general-wrapper').css('heignt', $scope.device_height + 500 + 'px');
+            //console.log(jQuery('#general-wrapper').css('heignt'))
+            $interval(function() {                
+                $scope.device_height = angular.element(window).height();
+                //console.log($scope.device_height);
+                jQuery('#general-wrapper').css('height', $scope.device_height + 'px');
+            }, 100);
+        };
+        $scope.resizeBody();
+        
+        $scope.openAlbum = function(){
+            console.log(123);
+            navigator.camera.getPicture(function(){}, function(){}, { quality: 50,
+                destinationType: Camera.DestinationType.FILE_URL,
+                sourceType: Camera.PictureSourceType.CAMERA,
+            });
+
+
+            /*Camera.getPicture(function(image) {
+                $scope.$apply(function() {
+                    $scope.imageData = image;
+                });
+            }, function(error) {
+                $scope.$apply(function() {
+                    $scope.error = error;
+                });
+            }, {
+                destinationType: Camera.DestinationType.FILE_URL,
+                sourceType: Camera.PictureSourceType.CAMERA,
+                encodingType: Camera.EncodingType.JPEG,
+                quality: 50
+            });*/
+            console.info(589);
+        }
+
+        //$scope.openAlbum();
+
+}]);
